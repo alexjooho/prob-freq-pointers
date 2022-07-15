@@ -10,18 +10,18 @@
 */
 function canConstructWord(word, letters) {
     // can add "fail fast" for if letters = 0 or is less than word length
-    if(letters.length = 0 || letters.length < word.length) return false;
-    let wordFreq = makeFreqCounter(word);
+    if (letters.length = 0 || letters.length < word.length) return false;
+    const wordFreq = makeFreqCounter(word);
     let lettersFreq = makeFreqCounter(letters);
-    for(let char of word) {
-        if(wordFreq[char] > lettersFreq[char]) return false;
+    for (let char of word) {
+        if (wordFreq[char] > lettersFreq[char]) return false;
     }
     return true;
 }
 
 function makeFreqCounter(string) {
     const counter = {};
-    for(let char of string) {
+    for (let char of string) {
         counter[char] = counter[char] + 1 || 1;
     }
     return counter;

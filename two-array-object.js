@@ -15,15 +15,15 @@
  * Accepts two arrays and returns an object. 
  */
 
-function twoArrayObject(keys,values) {
+function twoArrayObject(keys, values) {
 
     const keyValuePairs = {};
 
     //iterate over keys, end when keys is done
-    for (let i=0; i < keys.length; i++) {
+    for (let i = 0; i < keys.length; i++) {
         if (values[i] === undefined) {
             keyValuePairs[keys[i]] = null;
-        } else { 
+        } else {
             keyValuePairs[keys[i]] = values[i];
         }
     }
