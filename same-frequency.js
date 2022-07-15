@@ -19,7 +19,6 @@ function sameFrequency(num1, num2) {
 
 }
 
-
 function makeFreqCounter(num) {
     const counter = {};
 

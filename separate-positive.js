@@ -10,17 +10,24 @@
  */
 
 function separatePositive(numbers) {
+    
+    let counter = 0;
+
     for (let i = 0; i < numbers.length; i++) {
         if (numbers[i] < 0) {
             let negative = numbers[i];
-            numbers.splice(numbers[i], 1);
+            numbers.splice(i, 1);
             numbers.push(negative);
             i--;
+            counter++;
+            if (counter > numbers.length) {
+                return numbers;
+            }
         }
     }
-    return numbers;
 }
 
+separatePositive([2, -1, -3, 6]); 
 
 // need this because if a negative number is moved, we need to check the same index again
 
