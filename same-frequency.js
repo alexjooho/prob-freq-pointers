@@ -5,13 +5,18 @@
 // accepts two positive integers
 // sees if two numbers have the same frequency of digits
 
-function sameFrequency(num1,num2) {
+function sameFrequency(num1, num2) {
     const num1Digits = makeFreqCounter(num1);
     const num2Digits = makeFreqCounter(num2);
 
-    for (let digit in num1) {
-        
+    for (let digit in num1Digits) {
+        if (num1Digits[digit] !== num2Digits[digit]) {
+            return false;
+        }
     }
+
+    return true;
+
 }
 
 
@@ -20,7 +25,7 @@ function makeFreqCounter(num) {
 
     const numString = num.toString();
 
-    for(let digit of numString) {
+    for (let digit of numString) {
         counter[digit] = counter[digit] + 1 || 1;
     }
     return counter;
